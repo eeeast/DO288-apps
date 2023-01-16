@@ -8,7 +8,7 @@ ENV DOCROOT=/var/www/html
 
 RUN   yum install -y --nodocs --disableplugin=subscription-manager httpd && \
       yum clean all --disableplugin=subscription-manager -y && \
-      echo "Hello from the httpd-parent container!" > ${DOCROOT}/index.html
+      echo "Hello from the httpd-parent container!" >> ${DOCROOT}/index.html
 
 # Allows child images to inject their own content into DocumentRoot
 ONBUILD COPY src/ ${DOCROOT}/
