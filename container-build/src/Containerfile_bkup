@@ -5,8 +5,8 @@ MAINTAINER Red Hat Training <training@redhat.com>
 ENV DOCROOT=/var/www/html 
 
 
-RUN   yum install -y httpd && \
-      yum clean all -y && \
+RUN   yum install -y --nodocs --disableplugin=subscription-manager httpd && \
+      yum clean all --disableplugin=subscription-manager -y && \
       echo "Hellooooo from the httpd-parent container!" > ${DOCROOT}/index.html
 
 # Allows child images to inject their own content into DocumentRoot
