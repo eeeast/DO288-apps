@@ -11,6 +11,6 @@ RUN sed -i "s/#ServerName www.example.com:80/ServerName 0.0.0.0:8080/g" /etc/htt
 EXPOSE 8080
 
 RUN chgrp -R 0 /var/run/httpd /var/log/httpd && \
-    chgrp -R g=u /var/run/httpd /var/log/httpd
+    chmod -R g=u /var/run/httpd /var/log/httpd
 
 USER 1001
