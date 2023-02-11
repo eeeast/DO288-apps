@@ -10,4 +10,4 @@ ONBUILD cp ./src/index.html ${DOCROOT}/
 
 RUN rm -r /run/httpd/ && mkdir /run/httpd
 
-CMD user/sbin/httpd -DFOREGROUND
+CMD usr/sbin/httpd -DFOREGROUND
